@@ -50,7 +50,10 @@ public class Algorithms {
 		}
 		
 		try {
-			PrintWriter writer = new PrintWriter(args[1] + "_" + args[0] + "_" + args[2] + ".txt", "UTF-8");
+			String tmp = args[0];
+			int tmpint = tmp.lastIndexOf('/');
+			tmp = tmp.substring(tmpint+1, tmp.length());
+			PrintWriter writer = new PrintWriter("../output/" + args[1] + "_" + tmp + "_" + args[2], "UTF-8");
 			for (int i = 0; i < times; i++) {
 				writer.println(String.valueOf(result[i]));
 			}
