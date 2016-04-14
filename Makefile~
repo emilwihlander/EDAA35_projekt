@@ -1,0 +1,9 @@
+all: Algorithms.class almostNotSortedIndata.class almostSortedIndata.class
+Algorithms.class: src/Algorithms.java 
+	javac -d bin/ src/Algorithms.java
+almostNotSortedIndata.class: src/makeInput/almostNotSortedIndata.java
+	javac -d bin/ src/makeInput/almostNotSortedIndata.java
+almostSortedIndata.class: src/makeInput/almostSortedIndata.java
+	javac -d bin/ src/makeInput/almostSortedIndata.java
+clean:
+	rm -f *.class
