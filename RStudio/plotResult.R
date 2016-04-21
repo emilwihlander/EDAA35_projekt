@@ -7,7 +7,7 @@ plotresult = function(file , start = 1) {
 }
 
 inputFil <- "Random_2000"
-sort <- "bubbleSort"
+sort <- "selectionSort"
 iter <- "600"
 terminal <- paste("java Algorithms ../input/", inputFil, " ", sort, " ", iter, sep="")
 output <- paste("output/", paste(sort, inputFil, iter, sep="_"), sep="")
