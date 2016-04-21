@@ -2,10 +2,7 @@
 plotresult = function(file , start = 1) {
   data  <- read.csv(file)
   data  <- data[start:nrow(data) ,]
-  # mean <- sum(data)/(nrow(data))
   plot(data , type = 'l')
-  # y <- rep.int(mean, nrow(data))
-  # lines(data, y, col="green")
   
 }
 

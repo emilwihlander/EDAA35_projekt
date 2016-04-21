@@ -9,7 +9,7 @@ public class almostSortedIndata {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		int nbr = 2000;
+		int nbr = 500;
 		Random rand = new Random(42);
 		try {
 			PrintWriter writer = new PrintWriter("almost_sorted_2_" + nbr, "UTF-8");

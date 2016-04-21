@@ -81,7 +81,6 @@ public class Algorithms {
 					swapped = true;
 				}
 			}
-			l -= 1; //Optimering.
 		}
 		
 		long endTime = System.nanoTime();
