@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2016.1.21)  28 APR 2016 20:34
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2016.1.21)  28 APR 2016 20:49
 entering extended mode
 **./Rapport.tex
 (Rapport.tex
@@ -410,7 +410,7 @@ file (type pdf)
 
 <use output/500/AlmostSorted/bubbleSort_almost_sorted_500_600_100.pdf>
 Package pdftex.def Info: output/500/AlmostSorted/bubbleSort_almost_sorted_500_6
-00_100.pdf used on input line 54.
+00_100.pdf used on input line 55.
 (pdftex.def)             Requested size: 202.3524pt x 202.3524pt.
  [3 <./output/500/AlmostSorted/insertionSort_almost_sorted_500_600_100.pdf>]
 <output/500/AlmostSorted/selectionSort_almost_sorted_500_600_100.pdf, id=32, 50
@@ -420,35 +420,35 @@ ic file (type pdf)
 
 <use output/500/AlmostSorted/selectionSort_almost_sorted_500_600_100.pdf>
 Package pdftex.def Info: output/500/AlmostSorted/selectionSort_almost_sorted_50
-0_600_100.pdf used on input line 61.
+0_600_100.pdf used on input line 63.
 (pdftex.def)             Requested size: 202.3524pt x 202.3524pt.
 
 [4 <./output/500/AlmostSorted/bubbleSort_almost_sorted_500_600_100.pdf> <./outp
 ut/500/AlmostSorted/selectionSort_almost_sorted_500_600_100.pdf>]
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 71.
+(Font)              <7> on input line 74.
 
-Overfull \hbox (3.67659pt too wide) in paragraph at lines 71--80
+Overfull \hbox (3.67659pt too wide) in paragraph at lines 74--83
 [][] 
  []
 
 
-Overfull \hbox (3.67659pt too wide) in paragraph at lines 83--92
+Overfull \hbox (3.67659pt too wide) in paragraph at lines 88--97
 [][] 
  []
 
 [5]
-Underfull \hbox (badness 10000) in paragraph at lines 108--109
+Underfull \hbox (badness 10000) in paragraph at lines 114--115
 []\T1/cmr/m/it/10 Sorting Al-go-rithm Ani-ma-tions\T1/cmr/m/n/10 , http://www.s
 orting-algorithms.com/,
  []
 
 [6] (Rapport.aux) ) 
 Here is how much of TeX's memory you used:
- 2173 strings out of 493634
- 28565 string characters out of 3135239
- 90946 words of memory out of 3000000
- 5539 multiletter control sequences out of 15000+200000
+ 2178 strings out of 493634
+ 28628 string characters out of 3135239
+ 90986 words of memory out of 3000000
+ 5544 multiletter control sequences out of 15000+200000
  14352 words of font info for 36 fonts, out of 3000000 for 9000
  1025 hyphenation exceptions out of 8191
  27i,10n,23p,1334b,251s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -467,7 +467,7 @@ knappen\ec\dpi600\ecrm1728.pk><C:/Users/emilw/AppData/Local/Programs/MiKTeX 2.9
 s/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/emilw/AppData/Lo
 cal/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr9.pfb><C:/Users/emilw
 /AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
-Output written on Rapport.pdf (6 pages, 138942 bytes).
+Output written on Rapport.pdf (6 pages, 139004 bytes).
 PDF statistics:
  329 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)

@@ -40,12 +40,13 @@ De program som användes för att utföra denna undersökning var \emph{Eclipse}
 
 När alla förberedelseuppgifter var klara blev undersökningens upplägg sådant att de tre olika algoritmerna vilket var \emph{Bubblesort}, \emph{Selectionsort} och \emph{Insertionsort} kördes 600 gånger och de gjordes på tre olika sorterade listor vilket var en slumpgenerade lista, en nästan helt sorterad lista och en nästan omvänt sorterad lista med två olika storlekar 500 och 2000 vilket i slutändan gjorde att det blev 18 olika mätningar. För varje gång en algoritm har körts 600 gånger så togs ett medelvärde av de körningarna och det gjordes 100 gånger för att kunna få ett medelvärde av medelvärdena. Att köra den 100 gånger gör att risken för outliers minskar vilket ger ett mer säkert resultat.
 
-Efter varje körning skapades en plot av medelvärdena av medelvärdena och medelvärdet av dem räknades ut. I figur 1-3 ned kan man se exempel på plottar från mätningarna som gjordes med 500 element som var nästan sorterad från början.
+Efter varje körning skapades en plot av medelvärdena av medelvärdena och medelvärdet av dem räknades ut. I figur \ref{insertionSort}-\ref{selectionSort} ned kan man se exempel på plottar från mätningarna som gjordes med 500 element som var nästan sorterad från början.
 
 \begin{figure}[H]
 	\begin{center}
 		\includegraphics[scale=0.4]{output/500/AlmostSorted/insertionSort_almost_sorted_500_600_100.pdf}
 		\caption{Plot för medelvärdena av medelvärdena som körts 600 gånger med sorteringsalgoritmen \emph{Insertionsort} på en lista med 500 element som var nästan helt sorterade.}
+		\label{insertionSort}
 	\end{center}
 \end{figure}
 
@@ -53,6 +54,7 @@ Efter varje körning skapades en plot av medelvärdena av medelvärdena och mede
 	\begin{center}
 		\includegraphics[scale=0.4]{output/500/AlmostSorted/bubbleSort_almost_sorted_500_600_100.pdf}
 		\caption{Plot för medelvärdena av medelvärdena som körts 600 gånger med sorteringsalgoritmen \emph{Bubblesort} på en lista med 500 element som var nästan helt sorterade.}
+		\label{bubbleSort}
 	\end{center}
 \end{figure}
 
@@ -60,6 +62,7 @@ Efter varje körning skapades en plot av medelvärdena av medelvärdena och mede
 	\begin{center}
 		\includegraphics[scale=0.4]{output/500/AlmostSorted/selectionSort_almost_sorted_500_600_100.pdf}
 		\caption{Plot för medelvärdena av medelvärdena som körts 600 gånger med sorteringsalgoritmen \emph{Selectionsort} på en lista med 500 element som var nästan helt sorterade.}
+		\label{selectionSort}
 	\end{center}
 \end{figure}
 
@@ -78,7 +81,9 @@ Medelvärde: mv, Median: md
 		                               & md: 7283ns & md: 13677ns & md: 5141ns \\ \hline	
 	\end{tabular}
 	\caption{Tabell med medelvärde och medianer för alla tester som gjordes med 500 element.}
+	\label{Tabel500}
 \end{table}
+
 \begin{table}[H]
 	\begin{tabular}{r|c|c|c|}
 		antal: 2000 & Slumpgenererad & Nästan sorterad & Nästan omvänt sorterad \\ \hline
@@ -90,6 +95,7 @@ Medelvärde: mv, Median: md
 		                               & md: 13581ns & md: 27089ns & md: 13492ns \\ \hline	
 	\end{tabular}
 	\caption{Tabell med medelvärde och medianer för alla tester som gjordes med 2000 element.}
+	\label{Tabel2000}
 \end{table}
 
 \section{Diskussion}
@@ -98,7 +104,7 @@ Det man kan avgöra utifrån resultaten av mätningarna i vårt test är att \em
 Den sorteringsalgoritm som presterar svagast på alla testerna är \emph{Selectionsort} vilket inte är speciellt konstigt då \emph{Selectionsorts} värsta falls komplexitet är den samma som \emph{Selectionsorts} normal falls komplexitet. 
 
 \section{Slutsats}
-För att återkoppla till själva forskningsfrågorna kan man utifrån figur 4 och 5 se väldigt tydliga svar på frågorna. Den första frågan var ''I vilka fall av indata presterar respektive algoritm bäst?'' man kan tydligt se att \emph{Bubblesort} presterade bäst i alla tester som gjordes.
+För att återkoppla till själva forskningsfrågorna kan man utifrån tabell \ref{Tabel500} och \ref{Tabel2000} se väldigt tydliga svar på frågorna. Den första frågan var ''I vilka fall av indata presterar respektive algoritm bäst?'' man kan tydligt se att \emph{Bubblesort} presterade bäst i alla tester som gjordes.
 
 Den andra frågan var ''I vilka fall av indata presterar respektive algoritm sämst?'' det går även i denna fråga se att \emph{Selectionsort} presterade sämst i alla tester som utfördes.
 
