@@ -72,7 +72,7 @@ Här är en tabell över alla medelvärden och medianer som är framtagna från 
 Medelvärde: mv, Median: md 
 \begin{table}[H]
 	\begin{tabular}{r|c|c|c|}
-		Antal: 500 & Slumpgenererad & Nästan sorterad & Nästan omvänt sorterad \\ \hline
+		antal: 500 & Slumpgenererad & Nästan sorterad & Nästan omvänt sorterad \\ \hline
 		\multirow{2}{*}{Bubblesort}    & mv: 3276ns & mv: 11582ns & mv: 4018ns \\
 		                               & md: 2544ns & md: 9869ns & md: 2464ns \\ \hline
 		\multirow{2}{*}{Selectionsort} & mv: 115834ns & mv: 106767ns & mv: 115260ns \\
@@ -86,7 +86,7 @@ Medelvärde: mv, Median: md
 
 \begin{table}[H]
 	\begin{tabular}{r|c|c|c|}
-		Antal: 2000 & Slumpgenererad & Nästan sorterad & Nästan omvänt sorterad \\ \hline
+		antal: 2000 & Slumpgenererad & Nästan sorterad & Nästan omvänt sorterad \\ \hline
 		\multirow{2}{*}{Bubblesort}    & mv: 10177ns & mv: 19265ns & mv: 10992ns \\
 		                               & md: 9304ns & md: 19320ns & md: 11017ns \\ \hline
 		\multirow{2}{*}{Selectionsort} & mv: 1922456ns & mv: 1857603ns & mv: 1977647ns \\
@@ -99,8 +99,6 @@ Medelvärde: mv, Median: md
 \end{table}
 
 \section{Diskussion}
-När mätningarna genomfördes var webbläsaren uppe. Detta skulle kunna vara ett validitetshot då det tar extra resurser och kan därför medföra att exekveringstiden ökar. Dock gäller detta för samtliga mätningar vilket därför inte bör spela någon större roll. Majoriteten av mätningarna hade tydliga outliers, vilket syns tydligast i figur 1 där exekveringstiden ökade markant under två mätningar. Webbläsaren skulle kunna spela en roll i detta men då den var konstant uppe och inte användes under själva körningen, är det mer troligt att det är garbage collector som frigör utrymme i minnet vilket får exekveringstiden att öka. Värt att nämna är att outliers vi talar om är ett medelvärde av 600 körningar, alltså måste datorn just under dessa körningar vara extra belastad av externa faktorer.
-
 Det man kan avgöra utifrån resultaten av mätningarna i vårt test är att \emph{Bubblesort} presterar bäst på alla olika former av indata vilket kan tyckas vara konstigt då de flesta andra källor som jämför sorteringsalgoritmer visar på att \emph{Insertionsort} skulle vara likvärdig eller bättre än \emph{Bubblesort} på de flesta formerna av indata.
 
 Den sorteringsalgoritm som presterar svagast på alla testerna är \emph{Selectionsort} vilket inte är speciellt konstigt då \emph{Selectionsorts} värsta falls komplexitet är den samma som \emph{Selectionsorts} normal falls komplexitet. 
