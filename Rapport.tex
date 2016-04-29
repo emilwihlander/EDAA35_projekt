@@ -7,6 +7,10 @@
 \usepackage{multirow}
 \usepackage{float}
 
+\usepackage{algorithm}
+\usepackage{algorithmicx}
+\usepackage{algpseudocode}
+
 \title{EDAA35\\ projekt} 
 \author{Niklas Hedström \\dat15nhe@student.lu.se\and
 	    Jakob Hök \\ dat15jh1@student.lu.se \and
@@ -26,7 +30,7 @@
 Allt jämnt med att tekniken går framåt blir det viktigare för program att blir snabbare och då kan minsta nanosekund vara avgörande för om slutresultatet är bra eller dåligt. Ett sätt att få sitt program att jobba optimalt är att välja rätt sorts algoritm till rätt sorts arbete. Ett exempel kan vara att en sorteringsalgoritm kan vara bra på att sortera indata som är nästan helt sorterad men helt värdelös när det kommer till indata som är helt slumpgenererad, så det gäller att veta algoritmernas styrkor och svagheter när man väljer vilken algoritm man ska använda i programmet. Många gånger ska algoritmen köras flera tusen gånger och då kan valet av algoritm vara avgörande för slutresultatet, om en suboptimal algoritm körs en gång och gör en liten negativ differens i resultatet gör inte så stor skillnad men om den upprepas flera gånger blir den negativa differensen snabbt ett problem. Därför gäller det att man är noggrann när man väljer algoritm för att kunna spara viktiga nanosekunder i slutresultatet. 
 
 \section{Bakgrund}
-Syftet med dessa tester som vi har gjort är för att kunna jämföra hur \emph{Bubblesort}, \emph{Insertionsort} och \emph{Selectionsort} presterar i ett exekveringstidssammanhang för olika former av indata. Anledningen att valet föll på just dessa sorteringsalgoritmer då de har samma värsta falls komplexitet. Den hypotes som vi satte upp i början av laborationen var att \emph{Insertionsort} och \emph{Bubblesort} skulle vara likvärdiga i många tester men att \emph{Insertionsort} skulle vara oftare än inte vara snabbare än \emph{Bubblesort}, till sist skulle \emph{Selectionsort} vara den som tar längst tid varje gång då den har den värsta normal falls komplexiteten.\cite{sortingAlgoritm}
+Syftet med dessa tester som vi har gjort är för att kunna jämföra hur \emph{Bubblesort}, \emph{Insertionsort} och \emph{Selectionsort} presterar i ett exekveringstidssammanhang för olika former av indata. Anledningen att valet föll på just dessa sorteringsalgoritmer då de har samma värsta falls tidskomplexitet. Den hypotes som vi satte upp i början av laborationen var att \emph{Insertionsort} och \emph{Bubblesort} skulle vara likvärdiga i många tester men att \emph{Insertionsort} skulle vara oftare än inte vara snabbare än \emph{Bubblesort}, till sist skulle \emph{Selectionsort} vara den som tar längst tid varje gång då den har den värsta normal falls komplexiteten.\cite{sortingAlgoritm}
 
 \section{Frågeställning}
 \begin{itemize}
@@ -35,8 +39,73 @@ Syftet med dessa tester som vi har gjort är för att kunna jämföra hur \emph{
 	\item Hur presterar algoritmerna i jämförelse med varandra för motsvarande indata?
 \end{itemize}
 
+\section{Teori}
+\subsection{Tidskomplexitet}
+Valet av algoritmer baseras på teorin kring tidskomplexitet. Det är ett mått på antalet iterationer en algoritm behöver gå igenom för att sortera en viss samlingen indata. Eftersom få algoritmer presterar lika bra oberoende hur samlingen indata ser ut delar man in tidskomplexitet i två kategorier, bästa och värsta fall där bästa fall är när algoritmen har som kortast körtid och där värsta fall var som längst körtid.
+
+Det som denna rapport behandlar är värsta fall och mer specifikt algoritmer med $O(n^2)$ som värsta fall. $O(n^2)$ betyder att för $n$ antal element i samlingen indata kommer algoritmen i värsta fall behöva iterera $n^2$ gånger. Värt att notera är att detta inte är ett direkt mått på hur lång tid en algoritm tar då en iteration kan ta en obestämd mängd tid. 
+
+\subsection{Bubblesort}
+Bubblesort har $O(n^2)$ som värsta fall och arbetar igenom listan genom att jämföra par och byta plats på dem om de ligger i fel ordning enda tills listan är sorterad.\cite{bubble}
+\begin{algorithm}
+\begin{algorithmic}
+\Function{bubbleSort}{list $A$}
+\While{$swapped$}
+	\State $swapped \gets false$
+	\For{$i$ in $1$ to $A.length-1$}
+		\If{$A[i] < A[i-1]$}
+			\State \textsc{swap} $A[i]$ and $A[i-1]$
+			\State $swapped \gets true$
+		\EndIf
+	\EndFor
+\EndWhile
+\EndFunction
+\end{algorithmic}
+\caption{Psuedokod för Bubblesort (listan är 0-indexerad)}
+\end{algorithm}
+
+\subsection{Selectionsort}
+Selectionsort har $O(n^2)$ som värsta fall och arbetar igenom listan genom att successivt hitta det minsta osorterade elementet och lägga det sista bland de sorterade elementen enda till listan är sorterad.\cite{Selection}
+\begin{algorithm}
+\begin{algorithmic}
+\Function{selectionSort}{list $A$}
+\For{$i$ in $0$ to $A.length-2$}
+	\State $min \gets i$
+	\For{$j$ in $i+1$ to $A.length-1$}
+		\If{$A[min] > A[j]$}
+			\State $min = j$
+		\EndIf
+	\EndFor
+	\If{$min \neq i$}
+		\State \textsc{swap} $A[min]$ and $A[i]$
+	\EndIf
+\EndFor
+\EndFunction
+\end{algorithmic}
+\caption{Psuedokod för Selectionsort (listan är 0-indexerad)}
+\end{algorithm}
+
+\pagebreak
+\subsection{Insertionsort}
+Insertionsort har $O(n^2)$ som värsta fall och arbetar igenom listan genom att successivt ta nästa element och stoppa in det på den rätta platsen bland de sorterade elementen.\cite{insertion}
+\begin{algorithm}
+\begin{algorithmic}
+\Function{insertionSort}{list $A$}
+\For{$i$ in $0$ to $A.length-1$}
+	\State $tmp \gets A[i]$
+	\State $j \gets i-1$
+	\While{$j \ge 0 $ and $A[j] > A[i]$}
+		\State $A[j+1] \gets A[j]$
+		\State $j \gets j - 1$
+	\EndWhile
+	\State $A[j+1] \gets tmp$
+\EndFor
+\EndFunction
+\end{algorithmic}
+\caption{Psuedokod för Insertionsort (listan är 0-indexerad)}
+\end{algorithm}
 \section{Metodik}
-De program som användes för att utföra denna undersökning var \emph{Eclipse} där alla sorterings algoritmer skrevs i java. Sedan för att kunna köra algoritmerna flera gånger och få ut ett medelvärde så skrevs två program i R med hjälp av \emph{Rstudio}.  (förklaring av sorterings algoritmerna och hur det skrevs Emil). För att få fram indata som skulle sorteras användes först för den slumpgenererade listan ett eget skrivet program i java som hette randomSorted.java som använde javas \texttt{Random.nextInt()} för att kunna få trovärdigt slumpgenerade tal. Sedan för att få fram de andra två formerna av indata användes liknande program som hette almostNotSortedIndata.java och almostSortedIndata.java och de skapar indata-filer med ett visst antal element (i detta fall 2000 och 500). Den itererar då 500 eller 2000 gånger i en \texttt{for}-loop. I almostSortedIndata.java skapas för varje iteration "i" ett slumptal som kan vara ett värde från \texttt{i} till \texttt{i+3}. Alltså om vi är på iterationen 345 så kommer det slumpas ett tal mellan 345-348 och lägga in det i en fil. I almostNotSorted.java är det istället \texttt{i} till \texttt{i+3}.
+De program som användes för att utföra denna undersökning var \emph{Eclipse} där alla sorterings algoritmer skrevs i java. Sedan för att kunna köra algoritmerna flera gånger och få ut ett medelvärde så skrevs två program i R med hjälp av \emph{Rstudio}. För att få fram indata som skulle sorteras användes först för den slumpgenererade listan ett eget skrivet program i java som hette randomSorted.java som använde javas \texttt{Random.nextInt()} för att kunna få trovärdigt slumpgenerade tal. Sedan för att få fram de andra två formerna av indata användes liknande program som hette almostNotSortedIndata.java och almostSortedIndata.java och de skapar indata-filer med ett visst antal element (i detta fall 2000 och 500). Den itererar då 500 eller 2000 gånger i en \texttt{for}-loop. I almostSortedIndata.java skapas för varje iteration "i" ett slumptal som kan vara ett värde från \texttt{i} till \texttt{i+3}. Alltså om vi är på iterationen 345 så kommer det slumpas ett tal mellan 345-348 och lägga in det i en fil. I almostNotSorted.java är det istället \texttt{i} till \texttt{i+3}.
 
 När alla förberedelseuppgifter var klara blev undersökningens upplägg sådant att de tre olika algoritmerna vilket var \emph{Bubblesort}, \emph{Selectionsort} och \emph{Insertionsort} kördes 600 gånger och de gjordes på tre olika sorterade listor vilket var en slumpgenerade lista, en nästan helt sorterad lista och en nästan omvänt sorterad lista med två olika storlekar 500 och 2000 vilket i slutändan gjorde att det blev 18 olika mätningar. För varje gång en algoritm har körts 600 gånger så togs ett medelvärde av de körningarna och det gjordes 100 gånger för att kunna få ett medelvärde av medelvärdena. Att köra den 100 gånger gör att risken för outliers minskar vilket ger ett mer säkert resultat.
 
@@ -116,6 +185,9 @@ Den sista frågan var ''Hur presterar algoritmerna i jämförelse med varandra f
 
 \begin{thebibliography}{99}
 	\bibitem{sortingAlgoritm} \emph{Sorting Algorithm Animations}, http://www.sorting-algorithms.com/, (2016 April 27, 11:30)
+	\bibitem{bubble} \emph{Bubble sort}, (senast ändrad: 28 April 2016, 00:53), https://en.wikipedia.org/wiki/Bubble\_sort, (2016 April 28, 19:30)
+	\bibitem{Selection} \emph{Selection sort}, (senast ändrad: 25 April 2016, 07:57) https://en.wikipedia.org/wiki/Selection\_sort, (hämtad: 28 April 2016, 19:30)
+	\bibitem{insertion} \emph{Insertion sort}, (senast ändrad: 26 April 2016, 12:46) https://en.wikipedia.org/wiki/Insertion\_sort, (hämtad: 28 April 2016, 19:30)
 \end{thebibliography}
 
 \end{document}
