@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2016.1.21)  29 APR 2016 15:44
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2016.1.21)  22 MAY 2016 20:53
 entering extended mode
 **./Rapport.tex
 (Rapport.tex
@@ -419,10 +419,11 @@ File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 37.
+
+[2]
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <7> on input line 46.
-
-[2] [3]
+ [3]
 LaTeX Font Info:    Try loading font information for T1+cmtt on input line 108.
 
 
@@ -539,7 +540,7 @@ onts/cm/cmr10.pfb><C:/Users/emilw/AppData/Local/Programs/MiKTeX 2.9/fonts/type1
 fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/emilw/AppData/Local/Programs/
 MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr9.pfb><C:/Users/emilw/AppData/Loca
 l/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
-Output written on Rapport.pdf (8 pages, 197153 bytes).
+Output written on Rapport.pdf (8 pages, 197343 bytes).
 PDF statistics:
  426 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
